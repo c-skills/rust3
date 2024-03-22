@@ -1,0 +1,15 @@
+[package]
+name = "hello_world3"
+version = "1.0.0"
+edition = "2021"
+
+# This is also nice for direct checkouts:
+#build = "src/main.rs"
+
+[lib]
+crate-type = ["dylib"]
+bench = false
+
+[dependencies]
+#libc = "0.2.0"
+

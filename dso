@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -x
+cc -c -fPIC libz.c || true
+mkdir -p target/debug/deps || true
+cc -shared -Wl,-soname=libz.so.1 libz.o -o libz.so.1 || true
+strip --strip-all libz.so.1 || true
+cp libz.so.1 target/debug/deps/ || true
+
+rm libz.o
+
